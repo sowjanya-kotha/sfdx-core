@@ -849,6 +849,24 @@ export class AuthInfo extends AsyncCreatable<AuthInfo.Options> {
     };
   }
 
+ /* private async authorize(options: OAuth2Options): Promise<AuthFields> {
+    console.log('options  : ', options);
+    const oauth2 = new OAuth2(options);
+    console.log('oauth2  : ', oauth2);
+    const connection = await Connection.create({ authInfo: await AuthInfo.create({ username: 'rn@su-blitz.org' }) });
+    console.log('connection options  : ', connection.getConnectionOptions());
+    console.log('refresh token  :  ', connection.getConnectionOptions().refreshToken);
+    // const _authCode = options.authCode!;
+    // const authInfo = await connection.authorize(_authCode);
+
+    const authFields: AuthFields = {};
+    authFields.accessToken = connection.accessToken;
+    // authFields.refreshToken = connection.options.authInfo.fields.refreshToken;
+    authFields.instanceUrl = connection.instanceUrl;
+
+    return authFields;
+  }*/
+
   // See https://nodejs.org/api/dns.html#dns_dns_lookup_hostname_options_callback
   private async lookup(host: string): Promise<{ address: string; family: number }> {
     return new Promise<{ address: string; family: number }>((resolve, reject) => {
